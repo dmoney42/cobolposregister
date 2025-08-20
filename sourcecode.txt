@@ -294,17 +294,10 @@
                 WS-PRICE-TEXT
                 WS-TAXABLE
                 WS-DISCOUNT
-           *> Convert price text to numeric format
-           MOVE FUNCTION NUMVAL(WS-PRICE-TEXT) TO WS-PRICE-NUMERIC
            .
 
        WRITE-ITEM.
-           DISPLAY "Writing item from WS variables to items.dat file..."
-           MOVE WS-BARCODE        TO FILE-ITEM-BARCODE
-           MOVE WS-NAME           TO FILE-ITEM-NAME
-           MOVE WS-PRICE-NUMERIC  TO FILE-ITEM-PRICE
-           MOVE WS-TAXABLE        TO FILE-ITEM-TAXABLE
-           MOVE WS-DISCOUNT       TO FILE-ITEM-DISCOUNT
+           DISPLAY "Writing item to ITEM-FILE..."
            .
 
        PROCESS-ITEM.
